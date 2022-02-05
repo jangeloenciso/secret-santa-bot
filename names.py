@@ -1,1 +1,0 @@
-names = ["joker", "ken", "law", "ella", "marga", "aly", "pawi", "seth", "cesar", "akim", "julia"]
