@@ -1,7 +1,6 @@
 import os
 import random
 import discord
-from names import names
 from dotenv import load_dotenv
 
 load_dotenv()
