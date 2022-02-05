@@ -32,6 +32,9 @@ async def on_message(message):
             await message.channel.send("Ubos na")
 
     if content == "!join":
-        names.append(name)
-        print(names)
+        if name in names:
+            await message.channel.send("Kasali ka na tabi")
+        else:
+            names.append(name)
+            print(names)
 client.run(TOKEN)
