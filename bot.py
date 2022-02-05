@@ -9,6 +9,7 @@ TOKEN = os.getenv('DISCORD_TOKEN')
 client = discord.Client()
 
 names = []
+nakua_na = []
 
 @client.event
 async def on_ready():
@@ -32,9 +33,12 @@ async def on_message(message):
             await message.channel.send("Ubos na")
 
     if content == "!join":
-        if name in names:
+        if name in nakua_na and name in names:
             await message.channel.send("Kasali ka na tabi")
+        elif name in nakua_na:
+            await message.channel.send("Nabunot ka na ano ta masali ka nanaman hays")
         else:
             names.append(name)
+            nakua_na.append(name)
             print(names)
 client.run(TOKEN)
