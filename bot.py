@@ -34,11 +34,15 @@ async def on_message(message):
 
     if content == "!join":
         if name in nakua_na and name in names:
-            await message.channel.send("Kasali ka na tabi")
+            await message.channel.send(f"Kasali ka na tabi {message.author.mention}")
         elif name in nakua_na:
-            await message.channel.send("Nabunot ka na ano ta masali ka nanaman hays")
+            await message.channel.send(f"Nabunot ka na {message.author.mention} ano ta masali ka nanaman hays")
         else:
             names.append(name)
             nakua_na.append(name)
             print(names)
+
+    if content == "!list":
+        await message.channel.send(names)
+
 client.run(TOKEN)
